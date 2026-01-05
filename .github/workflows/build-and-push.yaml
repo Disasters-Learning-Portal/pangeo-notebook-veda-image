@@ -18,12 +18,12 @@ jobs:
           --no-run \
           --user-name=jovyan \
           --user-id=1000 \
-          --image-name=${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:${GITHUB_SHA::12} \
-          --cache-from=${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:latest \
+          --image-name=${{ secrets.DOCKER_USERNAME }}/disasters-jupyterhub-veda-image:${GITHUB_SHA::12} \
+          --cache-from=${{ secrets.DOCKER_USERNAME }}/disasters-jupyterhub-veda-image:latest \
           --build-arg GH_PAT=${{ secrets.GH_PAT }} \
           .
 
         # Tag and push
-        docker tag ${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:${GITHUB_SHA::12} ${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:${GITHUB_SHA::12}
-        docker push ${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:latest
+        docker tag ${{ secrets.DOCKER_USERNAME }}/disasters-jupyterhub-veda-image:${GITHUB_SHA::12} ${{ secrets.DOCKER_USERNAME }}/disasters-jupyterhub-veda-image:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/disasters-jupyterhub-veda-image:${GITHUB_SHA::12}
+        docker push ${{ secrets.DOCKER_USERNAME }}/disasters-jupyterhub-veda-image:latest
