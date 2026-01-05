@@ -3,6 +3,9 @@ channels:
   - nodefaults
 dependencies:
   - ipykernel
+  # Dependencies for sentintel-2 scripts
+  - p7zip==16.02
+  - libgdal-jp2openjpeg==3.10.3
   # Dependencies for VS Code IDE
   - code-server>=3.2
   - jupyter-vscode-proxy
@@ -20,6 +23,7 @@ dependencies:
     - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.6
     - jupyter-sshd-proxy
     - jupyterlab-bxplorer
+    - git+https://github.com/Disasters-Learning-Portal/disasters-product-algorithms.git
 variables:
   TITILER_STAC_ENDPOINT: 'https://openveda.cloud/api/stac'
   TITILER_ENDPOINT: 'https://openveda.cloud/api/raster'
